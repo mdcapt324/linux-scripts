@@ -37,28 +37,60 @@ func_install() {
 }
 
 ###############################################################################
+echo "##############################################"
+echo "Gathering information for package installation"
+echo "##############################################"
+###############################################################################
+###############################################################################
+echo "Is this a VirtualBox installation?  (y/n)"
+read -p '(y/n): ' vbinstall
+echo "#########################################"
+
+###############################################################################
 echo "Installation of additional software"
 ###############################################################################
 
-list=(
-arcolinux-teamviewer
-geany
-geany-plugins
-libreoffice-still
-audacity
-deadbeef
-rofi
-galculator
-screenkey-git
-pcmanfm
-ranger
-alacritty
-imagewriter
-xarchiver
-powerline
-powerline-fonts
-vifm
-)
+if [ "$vbinstall" = "y" ]; then
+	echo "###############################################"
+	echo "Using software list for VirtualBox Installation"
+	list=(
+	geany
+	geany-plugins
+	libreoffice-still
+	rofi
+	galculator
+	screenkey-git
+	pcmanfm
+	ranger
+	alacritty
+	xarchiver
+	powerline
+	powerline-fonts
+	vifm
+	)
+else
+	echo "######################################"
+	echo "Using software for Normal Installation"
+	list=(
+	arcolinux-teamviewer
+	geany
+	geany-plugins
+	libreoffice-still
+	audacity
+	deadbeef
+	rofi
+	galculator
+	screenkey-git
+	pcmanfm
+	ranger
+	alacritty
+	imagewriter
+	xarchiver
+	powerline
+	powerline-fonts
+	vifm
+	)
+fi
 
 count=0
 
