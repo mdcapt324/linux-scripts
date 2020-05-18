@@ -104,8 +104,8 @@ done
 
 tput setaf 6;echo "################################################################"
 echo "Copying bashrc and vimrc to home directory"
-cp -f ~/linux-scripts/bashrc ~/.bashrc
-cp -f ~/linux-scripts/vimrc ~/.vimrc
+cp -f ~/linux-scripts/arch-bashrc ~/.bashrc
+cp -f ~/linux-scripts/arch-vimrc ~/.vimrc
 
 echo "Creating Vim Vundle directory, cloning Vundle, and installing plugins"
 echo "################################################################"
