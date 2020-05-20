@@ -72,7 +72,6 @@ else
 	echo "######################################"
 	echo "Using software for Normal Installation"
 	list=(
-	arcolinux-teamviewer
 	geany
 	geany-plugins
 	libreoffice-still
@@ -83,12 +82,10 @@ else
 	screenkey-git
 	pcmanfm
 	ranger
-	alacritty
 	imagewriter
 	xarchiver
 	powerline
 	powerline-fonts
-	vifm
 	)
 fi
 
@@ -104,7 +101,9 @@ done
 
 tput setaf 6;echo "################################################################"
 echo "Copying bashrc and vimrc to home directory"
+cp -f ~/.bashrc ~/.bashrc.bkp
 cp -f ~/linux-scripts/arch-bashrc ~/.bashrc
+cp -f ~/.vimrc ~/.vimrc.bkp
 cp -f ~/linux-scripts/arch-vimrc ~/.vimrc
 
 echo "Creating Vim Vundle directory, cloning Vundle, and installing plugins"
