@@ -1,0 +1,212 @@
+#+title:SXHKDRC Org File
+#+PROPERTY: header-args:shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+This file is the org-mode config file for sxhkdrc
+
+Keyboard Bindings for any Tiling Window Manager
+* Super + Function Keys
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# Atom
+super + F1
+    atom
+
+# VLC
+super + F2
+    vlc --video-on-top
+
+# Rofi Fullscreen
+super + F11
+    rofi -show run -fullscreen
+
+# Rofi
+super + F12
+    rofi -show run
+
+#+end_src
+* Super + Keys
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# dmenu
+super + d
+    dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+
+# Emacs
+super + e
+    emacs
+
+# arcolinux-logout
+super + x
+    arcolinux-logout
+
+# termite
+super + t
+    termite
+
+# Xkill
+super + Escape
+    xkill
+
+#+end_src
+* Super + Shift Keys
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# File-Manager
+super + shift + Return
+    pcmanfm
+
+# reload sxhkd
+super + shift + s
+    pkill -USR1 -x sxhkd
+
+#+end_src
+* Control + Alt Keys
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# arcolinux welcome app
+ctrl + alt + w
+    arcolinux-welcome-app
+
+# arcolinux tweak tool
+ctrl + alt + e
+    arcolinux-tweak-tool
+
+# chromium
+ctrl + alt + c
+    chromium --no-default-browser-check
+
+# firefox
+ctrl + alt + f
+    firefox
+
+# nitrogen
+ctrl + alt + i
+    nitrogen
+
+# pamac manager
+ctrl + alt + p
+    pamac-manager
+
+# xfce4 settings manager
+ctrl + alt + m
+    xfce4-settings-manager
+
+# rofi theme selector
+ctrl + alt + r
+    rofi-theme-selector
+
+#+end_src
+* Alt + Keys
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# gmrun
+alt + F2
+    gmrun
+
+# xfce4 appfinder
+alt + F3
+    xfce4-appfinder
+
+#+end_src
+* Control + Shift Keys
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# xfce4 taskmanager
+ctrl + shift + Escape
+    xfce4-taskmanager
+
+#+end_src
+* Screenshots
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# scrot
+Print
+    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+
+# screenshooter
+ctrl + Print
+    xfce4-screenshooter
+
+# gnome screenshot
+ctrl + shift + Print
+    gnome-screenshot -i
+
+#+end_src
+* Function Keys
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# xfce4 terminal dropdown
+F12
+    xfce4-terminal --drop-down
+
+#+end_src
+* Multimedia Keys
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+#Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+
+#Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 10%-
+
+#Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+#Playerctl works for Pragha, Spotify and others
+#Delete the line for playerctl if you want to use mpc
+#and replace it with the corresponding code
+#mpc works for e.g.ncmpcpp
+#mpc toggle
+#mpc next
+#mpc prev
+#mpc stop
+
+#PLAY
+XF86AudioPlay
+    playerctl play-pause
+
+#Next
+XF86AudioNext
+    playerctl next
+
+#previous
+XF86AudioPrev
+    playerctl previous
+
+#Stop
+XF86AudioStop
+    playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+
+#+end_src
+* Polybar
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# hide polybar
+super + y
+    polybar-msg cmd toggle
+
+#+end_src
+* HLWM Specific Keys
+#+begin_src shell :tangle ~/.dotfiles/sxhkdrc :mkdirp yes
+
+# close window/application
+super + q
+    herbstclient close
+
+# reload herbstluftwm
+super + shift + r
+    herbstclient reload
+
+#+end_src
